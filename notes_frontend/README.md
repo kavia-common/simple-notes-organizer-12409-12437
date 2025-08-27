@@ -1,45 +1,36 @@
-# vue-kavia
+# Simple Notes (Vue 3 + Vite)
 
-This template should help get you started developing with Vue 3 in Vite.
+A minimal, modern notes SPA with create, read, update, delete, and search. Responsive layout, light/dark theme.
 
-## Recommended IDE Setup
+## Colors
+- Primary: `#1976d2`
+- Accent: `#82b1ff`
+- Secondary: `#424242`
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Backend API
+The app expects a notes backend that exposes:
+- GET    `GET {VITE_NOTES_API_URL}/notes` -> Note[]
+- POST   `POST {VITE_NOTES_API_URL}/notes` -> created Note
+- PUT    `PUT {VITE_NOTES_API_URL}/notes/:id` -> updated Note
+- DELETE `DELETE {VITE_NOTES_API_URL}/notes/:id` -> 204
 
-## Type Support for `.vue` Imports in TS
+Configure the base URL via environment:
+- VITE_NOTES_API_URL (default: `/api`)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Setup
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+Build:
+```bash
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+Environment example:
+```bash
+# .env
+VITE_NOTES_API_URL=https://your-backend.example.com
 ```
